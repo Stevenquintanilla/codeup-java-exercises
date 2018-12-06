@@ -94,12 +94,16 @@ public class MoviesApplication {
                     break;
                 case 2:
                     getAnimated(allMovies);
+                    break;
                 case 3:
                     getDrama(allMovies);
+                    break;
                 case 4:
                     getHorror(allMovies);
+                    break;
                 case 5:
                     getScifi(allMovies);
+                    break;
                 case 6:
                     addMovieInput();
             }

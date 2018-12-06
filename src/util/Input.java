@@ -10,7 +10,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-        String userInput = scanner.next();
+        String userInput = scanner.nextLine();
         if (userInput.equalsIgnoreCase("y") ||
                 userInput.equalsIgnoreCase("yes")) {
             return true;
@@ -30,7 +30,16 @@ public class Input {
     }
 
     public int getInt() {
-        return scanner.nextInt();
+        int userInput;
+
+        try {
+            userInput = Integer.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, please try again");
+            return getInt();
+        }
+
+        return userInput;
     }
 
     public double getDouble(double min, double max) {
@@ -44,6 +53,15 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        double userInput;
+
+        try {
+            userInput = Double.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, please try again");
+            return getDouble();
+        }
+
+        return userInput;
     }
 }
